@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 90%;
+}
+
+.navbar {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 0.5px solid #333C7333;
+    background-color: #FCFCFC;
+}
+
+.navbar-nav li {
+    display: flex;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.navbar-nav .nav-link.active {
+    color: #FD0000;
+}
+
+.container-fluid {
+    position: relative;
+    background-color: rgba(247, 247, 247, 1);
+    z-index: -1;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #264065;
+}
+
+span {
+    color: #FD0000;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    color: #494949;
+}
+
+.text {
+    padding: 100px 50px;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.review .a {
+    background-color: #FD0000;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.box {
+    position: absolute;
+    bottom: -70px;
+    left: 25%;
+    transform: translateX(-50%);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px solid lightgray;
+    background-color: white;
+    margin-bottom: -40px;
+}
+
+/* Media Query for tablets and below */
+@media (max-width: 992px) {
+    .content {
+        padding: 100px 50px;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .box {
+        position: static;
+        transform: none;
+        margin: 20px 0;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+    }
+}
+
+/* Media Query for mobile devices */
+@media (max-width: 576px) {
+    header {
+        width: 90%;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .content {
+        padding: 50px 20px;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #FCFCFC;
+    transition: top 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 70px 20px 20px;
+}
+
+.sidebar.open {
+    top: 0;
+}
+
+.sidebar .logo {
+    position: relative;
+    top: -45px;
+    display: block;
+}
+
+.sidebar .close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    color: #FD0000;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.sidebar .navbar-nav {
+    margin-top: 10px;
+}
+
+.sidebar .navbar-nav {
+    width: 100%;
+}
+
+.sidebar .nav-link {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px 0;
+    border-width: 100%;
+}
+
+.sidebar .nav-item {
+    position: relative;
+    border-bottom: 2px solid black;
+}
+
+.sidebar .nav-item::after {
+    content: '•';
+    position: absolute;
+    right: -6px;
+    bottom: -23px;
+    font-size: 30px;
+}
+
+.sidebar .nav-item:nth-child(4) {
+    border-bottom: none;
+}
+
+.sidebar .nav-item:nth-child(4)::after {
+    content: none;
+}
+
+.sidebar-toggle {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .col {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        display: block;
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: #FD0000;
+        cursor: pointer;
+        margin: 20px;
+    }
+
+    .text {
+        padding: 50px 30px;
+    }
+}
+
+@media (min-width: 577px) {
+    .sidebar {
+        display: none;
+    }
+}
